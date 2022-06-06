@@ -1,0 +1,16 @@
+.API_url {
+    width: 1200px;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.API_title {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.API_parag{
+    padding-bottom: 8px;
+    font-size: 1.2em;
+}

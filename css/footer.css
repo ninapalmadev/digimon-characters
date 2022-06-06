@@ -1,0 +1,12 @@
+#creator {
+    width: 1200px;
+    margin: auto;
+    margin-top: 12px;
+    padding: 50px;
+    text-align: center;
+}
+
+#creator > p > a {
+    color: var(--cor-azul);
+    font-weight: bold;
+}

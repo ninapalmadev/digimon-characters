@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Digimons</title>
+</head>
+<body>
+    <header class="main_header">
+        <h1 id="home">Digiflix</h1>
+        <nav class="main_nav">
+            <a href="#home" title="Ir para início da página">Home</a>
+            <a href="#characters" title="Ir para seção de Digimons">Digimons</a>
+            <a href="#API_Url" title="Ir para seção da API">API </a>
+            <a href="#creator" title="Ir para descrição do criador da página">Dev</a>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="bg-main">
+            <img src="assets/digimons-theme.jpg" width="500" alt="">
+            <p class="main-parag">Veja abaixo os Digimons.</p>
+            <form class="search">
+                <label for="searchBar">Busque por nome: </label>
+                <input type="text" name="searchBar" id="searchBar">
+                <div id="select-level"></div>
+            </form>
+        </div>
+        <section id ="characters" class="characters">
+            <h2>DIGIMONS</h2>
+            <div class="section-characteres"></div>
+        </section>
+        <section id="API_Url" class="API_url">
+            <h3 class="API_title">API</h3>
+            <p class="API_parag">
+                Clique nesse <em><a href="https://digimon-api.vercel.app/index.html">link</a></em> para ter acesso a API que originou este projeto. 
+            </p>
+            <p class="API_parag">
+                Nela você poderá encontrar maiores informações sobre a sua documentação, JSON e quem são os criadores. 
+            </p>
+        </section>
+    </main>
+    <footer id="creator">
+        <p>
+            Página criada por <a href="https://github.com/ninapalmadev">Nina Palma</a> em parceria com Front Arretado.
+        </p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

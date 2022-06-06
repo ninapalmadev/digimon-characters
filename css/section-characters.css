@@ -1,0 +1,85 @@
+.characters {
+    background-color: var(--cor-branco);
+    margin-top: 12px;
+}
+
+.section-characteres {
+    font-family: var(--fonte-destaque);
+    color: black;
+    width: 1220px;
+    margin: auto;
+    margin-top: 16px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 1.2em;
+}
+
+.characters > h2 {
+    font-family: var(--fonte-destaque);
+    font-weight: bold;
+    font-size: 1.8em;
+    padding: 25px;
+    width: 200px;
+    margin: auto;
+    color: var(--cor-azul);
+}
+
+.description {
+    text-align: center;
+    margin-top: 12px;
+    padding-top: 10px;
+    padding-bottom: 35px;
+    border: 2px solid var(--cor-verde1);
+    box-shadow: 2px 2px 2px 1px var(--cor-rosa);
+    border-radius: 20px;
+}
+
+.name-character {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.hidden {
+    display: none;
+}
+.span-dgm {
+    padding: 10px;
+}
+
+.Training {
+    border-bottom: 2px solid var(--cor-rosa);
+    border-right: 2px solid var(--cor-rosa);
+}
+
+.Rookie {
+    border-bottom: 2px solid var(--cor-verde1);
+    border-right: 2px solid var(--cor-verde1);
+}
+
+.Champion{
+    border-bottom: 2px solid var(--cor-laranja);
+    border-right: 2px solid var(--cor-laranja);
+}
+
+.Fresh {
+    border-bottom: 2px solid var(--cor-azul);
+    border-right: 2px solid var(--cor-azul);   
+}
+
+.Ultimate {
+    border-bottom: 2px solid var(--cor-violeta);
+    border-right: 2px solid var(--cor-violeta);
+}
+
+.Armor {
+    border-bottom: 2px solid var(--cor-rosa);
+    border-right: 2px solid var(--cor-verde1);
+}
+
+.Mega {
+    border: 2px solid var(--cor-verde2);
+}
