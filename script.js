@@ -5,30 +5,28 @@ async function loadDigimons (){
     const response = await fetch('https://digimon-api.vercel.app/api/digimon');
     const data = await response.json()
     createDigimonCards(data);
-    createDigimonSelect(data)
+    filterDigimons("All")
 };
 
 loadDigimons ();
 
 function createDigimonCards(data){
-    console.log(data);
     digimonMain.innerHTML = '';
     data.map(digimon => {
+       // console.log(data);
         const {name, img, level} = digimon;
         const digimonsCards = document.createElement('figure');
-        digimonsCards.classList.add('description');
+        digimonsCards.classList.add('.description');
         digimonsCards.innerHTML = `
-        <img class="img-description" src="${img}" width="180" alt="Imagem do Digimon ${name}">
-            <figcaption class="name-character">${name}</figcaption>
-            <span class="span-dgm ${level}">Level: ${level}</span>
+            <div class="description ${level}">
+                <img class="img-description" src="${img}" width="180" alt="Imagem do Digimon ${name}">
+                    <figcaption class="name-character">${name}</figcaption>
+                    <span class="span-dgm ${level}">Level: ${level}</span>
+            </div>
         `            
     digimonMain.appendChild(digimonsCards);
     });  
 };
-
-function createDigimonSelect(digimonSelect) {
-    document.getElementById("select-level").innerHTML = 'hey'
-}
 
 const hideDigimons = (searchDigimons, inputValue) => {
     searchDigimons
@@ -53,4 +51,29 @@ searchLevel.addEventListener('input', event => {
     hideDigimons(searchDigimons, inputValue);
     showDigimons(searchDigimons, inputValue);
 });
+
+
+function filterDigimons(value) {
+    let buttons = document.querySelectorAll(".button-value");
+    buttons.forEach((button) => {
+        if(value.toUpperCase() == button.innerText.toUpperCase()){
+            button.classList.add("active");
+        } else {
+            button.classList.remove("active");
+        }
+    });
+
+    let elements = document.querySelectorAll('.description');
+    elements.forEach((element)=> {
+        if(value == "All") {
+            element.parentElement.classList.remove("hide");
+        }else{
+            if(element.classList.contains(value)){
+                element.parentElement.classList.remove("hide");
+            }else{
+                element.parentElement.classList.add("hide");
+            }
+        };
+    }); 
+};
 
