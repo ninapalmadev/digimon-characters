@@ -20,13 +20,23 @@
     </header>
     <main class="main">
         <div class="bg-main">
-            <img src="assets/digimons-theme.jpg" width="500" alt="">
+            <img class="bg-img" src="assets/digimons-theme.jpg" width="400" alt="">
             <p class="main-parag">Veja abaixo os Digimons.</p>
+            <div id="select-level">
+                <p>Selecione por level: </p>
+                <button class="button-value" onclick="filterDigimons('All')">Todos</button>
+                <button class="button-value" onclick="filterDigimons('Training')">Training </button>
+                <button class="button-value" onclick="filterDigimons('Rookie')">Rookie </button>
+                <button class="button-value" onclick="filterDigimons('Champion')">Champion</button>
+                <button class="button-value" onclick="filterDigimons('Fresh')">Fresh </button>
+                <button class="button-value" onclick="filterDigimons('Ultimate')">Ultimate </button>
+                <button class="button-value" onclick="filterDigimons('Armor')">Armor </button>
+                <button class="button-value" onclick="filterDigimons('Mega')">Mega </button>
             <form class="search">
                 <label for="searchBar">Busque por nome: </label>
                 <input type="text" name="searchBar" id="searchBar">
-                <div id="select-level"></div>
             </form>
+            </div>
         </div>
         <section id ="characters" class="characters">
             <h2>DIGIMONS</h2>
