@@ -6,8 +6,9 @@
 }
 
 .bg-main {
-    width: 500px;
+    width: 800px;
     margin: auto;
+    text-align: center;
 }
 
 .main .main-parag {
@@ -17,15 +18,3 @@
     margin: 8px 0;
 }
 
-.search {
-    display: flex;
-    flex-direction: column;
-    padding: 4px;
-}
-
-#searchBar {
-    margin-top: 8px;
-    padding: 8px;
-    border: 2px solid var(--cor-verde1);
-    border-radius: 20px;
-}
