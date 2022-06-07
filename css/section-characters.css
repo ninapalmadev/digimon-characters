@@ -46,6 +46,10 @@
 .hidden {
     display: none;
 }
+
+.hide{
+    display: none;
+}
 .span-dgm {
     padding: 10px;
 }

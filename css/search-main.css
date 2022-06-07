@@ -1,0 +1,28 @@
+#select-level {
+    width: 800px;
+    padding: 10px;
+    margin-top: 8px;
+}
+.search {
+    margin: auto;
+    width: 400px;
+    padding: 4px;
+}
+
+#searchBar {
+    margin: 10px 4px;
+    padding: 8px;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 10px;
+}
+
+.button-value { 
+    background-color: var(--cor-laranja);
+    margin-top: 8px;
+    padding: 10px;
+}
+
+.active {
+    background-color: var(--cor-azul); 
+}
+
