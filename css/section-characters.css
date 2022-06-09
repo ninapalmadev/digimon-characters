@@ -8,7 +8,6 @@
     color: black;
     width: 1220px;
     margin: auto;
-    margin-top: 16px;
     padding-bottom: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -20,7 +19,7 @@
     font-family: var(--fonte-destaque);
     font-weight: bold;
     font-size: 1.8em;
-    padding: 25px;
+    padding: 20px;
     width: 200px;
     margin: auto;
     color: var(--cor-azul);
@@ -36,6 +35,13 @@
     border-radius: 20px;
 }
 
+.favorite-btn {
+    border-radius: 50%;
+    padding: 4px 9px;
+    border: 2px solid var(--cor-azul);
+    background-color: var(--cor-branco);
+}
+
 .name-character {
     text-transform: uppercase;
     font-weight: bold;
@@ -43,15 +49,16 @@
     padding: 8px 0;
 }
 
+.span-dgm {
+    padding: 10px;
+    margin-right: 5px;
+}
 .hidden {
     display: none;
 }
 
 .hide{
     display: none;
-}
-.span-dgm {
-    padding: 10px;
 }
 
 .Training {
