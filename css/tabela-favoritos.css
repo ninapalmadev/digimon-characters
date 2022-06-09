@@ -1,0 +1,14 @@
+.tabela-favoritos {
+    color: black;
+    width: 1200px;
+    margin: auto;
+    
+}
+
+.thead {
+    background-color: var(--cor-azul);
+}
+
+.thead-th {
+    border: 2px solid var(--cor-azul);
+}
