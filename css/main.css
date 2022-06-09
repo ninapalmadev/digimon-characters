@@ -17,4 +17,12 @@
     text-align: center;
     margin: 8px 0;
 }
+@media screen and (max-width: 640px){
+    .bg-main {
+        width: 400px;
+        margin: auto;
+        text-align: center;
+    }
+    
+}
 

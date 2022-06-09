@@ -94,3 +94,37 @@
 .Mega {
     border: 2px solid var(--cor-verde2);
 }
+
+@media screen and (max-width: 1024px){
+    .section-characteres{
+        width: 800px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        gap: 0.9em;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .section-characteres{
+        width: 600px;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+        gap: 0.9em;
+    } 
+}
+@media screen and (max-width: 640px){
+    .section-characteres{
+        width: 340px;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+        gap: 0.9em;
+    }
+    .img-description {
+        width: 80px;
+    }
+    .description{
+        max-width: 160px;
+        height: 180px;
+    }
+    
+}

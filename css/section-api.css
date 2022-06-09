@@ -14,3 +14,34 @@
     padding-bottom: 8px;
     font-size: 1.2em;
 }
+@media screen and (max-width: 1024px){
+    .API_url {
+        width: 800px;
+        margin: auto;
+        margin-top: 12px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .API_url {
+        width: 600px;
+        margin: auto;
+        margin-top: 12px;
+    }
+    
+}
+@media screen and (max-width: 640px){
+    .API_url {
+        width: 330px;
+        margin: auto;
+        margin-top: 12px;
+    }
+    .API_title {
+        font-size: 1em;
+    }
+    
+    .API_parag{
+        padding-bottom: 8px;
+        font-size: 0.8em;
+    }
+}

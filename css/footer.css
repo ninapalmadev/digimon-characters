@@ -10,3 +10,23 @@
     color: var(--cor-azul);
     font-weight: bold;
 }
+
+@media screen and (max-width: 1024px){
+    #creator {
+        width: 800px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #creator {
+        width: 600px;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 640px){
+    #creator {
+        width: 300px;
+        margin: auto;
+    }
+}

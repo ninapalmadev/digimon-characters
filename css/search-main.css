@@ -26,3 +26,16 @@
     background-color: var(--cor-azul); 
 }
 
+@media screen and (max-width: 640px){
+    #select-level {
+        width: 330px;
+        padding: 10px;
+        margin-top: 8px;
+    }
+    .search {
+        margin: auto;
+        width: 330px;
+        padding: 4px;
+    }
+    
+}

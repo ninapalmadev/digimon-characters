@@ -1,7 +1,6 @@
 const digimonMain = document.querySelector('.section-characteres')
 const searchLevel = document.querySelector('#searchBar')
 let favoritosHeader = document.querySelector('#favoritosNav')
-
 let digimonFavoritos = [];
 
 async function loadDigimons (){
@@ -10,9 +9,8 @@ async function loadDigimons (){
     createDigimonCards(data);
     filterDigimons("All")
 };
-
 loadDigimons ();
-
+/* cria os Digimons no main */
 function createDigimonCards(data){
     digimonMain.innerHTML = '';
     data.map(digimon => {
@@ -29,49 +27,10 @@ function createDigimonCards(data){
                     </button>    
             </div>
         `            
-        digimonMain.appendChild(digimonsCards);
-    
+        digimonMain.appendChild(digimonsCards);   
     });  
 };
-            
-function favDigimon(digimon) {
-    digimonFavoritos = digimonLocalStorage();
-    const addFavoritos = digimonFavoritos.filter((item) => (item.name === digimon.name))
-    if(addFavoritos.length === 0) {
-        digimonFavoritos.push(digimon)
-    }else{
-        digimonFavoritos = digimonFavoritos.filter((item) => (item.name != digimon.name))
-    }
-    localStorage.setItem("Lista Digimon", JSON.stringify(digimonFavoritos))
-};
-
-function digimonLocalStorage() {
-    if(localStorage.getItem("Lista Digimon") == null){
-        localStorage.setItem("Lista Digimon", "[]")
-    }
-    const dataFavoritos = localStorage.getItem("Lista Digimon")
-    return JSON.parse(dataFavoritos)
-}
-
-function carregarFavDigimons(digimonMain){
-    if(localStorage.getItem("Lista Digimon")){
-    const favoritesTable = document.querySelector('#favoritos tbody');
-    const digimonsFavoritados = digimonLocalStorage();
-
-        digimonMain.forEach(digimon => {
-            const tr = document.createElement('tr')
-            tr.innerHTML = `
-                <td>
-                    <img src"${digimon.img} alt ="Imagem do Digimon ${digimon.name}"
-                </td>
-                <td>${digimon.name}</td>
-                <td>${digimon.level}</td>
-            `;
-            favoritesTable.appendChild(tr);
-        })
-    }
-}
-
+/* busca por nome no imput */
 const hideDigimons = (searchDigimons, inputValue) => {
     searchDigimons
     .filter(digimons => !digimons.textContent.toLowerCase().includes(inputValue))
@@ -96,6 +55,7 @@ searchLevel.addEventListener('input', event => {
     showDigimons(searchDigimons, inputValue);
 });
 
+/* filtro de categorias por level */
 function filterDigimons(value) {
     let buttons = document.querySelectorAll(".button-value");
     buttons.forEach((button) => {
@@ -119,3 +79,42 @@ function filterDigimons(value) {
         };
     }); 
 };
+  
+/*Digimons favoritados e postos no localStorage */
+function favDigimon(digimon) {
+    digimonFavoritos = digimonLocalStorage();
+    const addFavoritos = digimonFavoritos.filter((item) => (item.name === digimon.name))
+        if(addFavoritos.length === 0){
+            digimonFavoritos.push(digimon)
+        }else{
+            digimonFavoritos = digimonFavoritos.filter((item) => (item.name != digimon.name))
+        }
+            localStorage.setItem("Lista Digimon", JSON.stringify(digimonFavoritos))
+};
+    
+function digimonLocalStorage() {
+    if(localStorage.getItem("Lista Digimon") == null){
+        localStorage.setItem("Lista Digimon", "[]")
+    }
+        const dataFavoritos = localStorage.getItem("Lista Digimon")
+        return JSON.parse(dataFavoritos)
+}
+    
+function carregarFavDigimons(digimonMain){
+    if(localStorage.getItem("Lista Digimon")){
+        const favoritesTable = document.querySelector('#favoritos tbody');
+        const digimonsFavoritados = digimonLocalStorage();
+    
+        digimonMain.forEach(digimonsFavoritados => {
+            const tr = document.createElement('tr')
+            tr.innerHTML = `
+                <td>
+                    <img src"${digimonsFavoritados.img} alt ="Imagem do Digimon ${digimonsFavoritados.name}"
+                </td>
+                <td>${digimonsFavoritados.name}</td>
+                <td>${digimonsFavoritados.level}</td>
+            `;
+            favoritesTable.appendChild(tr);
+        })
+    }
+}
