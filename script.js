@@ -27,10 +27,10 @@ function createDigimonCards(data){
                     </button>    
             </div>
         `            
-        digimonMain.appendChild(digimonsCards);   
+        digimonMain.appendChild(digimonsCards);
     });  
 };
-/* busca por nome no imput */
+/* busca por nome no input */
 const hideDigimons = (searchDigimons, inputValue) => {
     searchDigimons
     .filter(digimons => !digimons.textContent.toLowerCase().includes(inputValue))
@@ -82,14 +82,14 @@ function filterDigimons(value) {
   
 /*Digimons favoritados e postos no localStorage */
 function favDigimon(digimon) {
-    digimonFavoritos = digimonLocalStorage();
+    let digimonFavoritos = digimonLocalStorage();
     const addFavoritos = digimonFavoritos.filter((item) => (item.name === digimon.name))
         if(addFavoritos.length === 0){
             digimonFavoritos.push(digimon)
         }else{
             digimonFavoritos = digimonFavoritos.filter((item) => (item.name != digimon.name))
         }
-            localStorage.setItem("Lista Digimon", JSON.stringify(digimonFavoritos))
+        localStorage.setItem("Lista Digimon", JSON.stringify(digimonFavoritos))
 };
     
 function digimonLocalStorage() {
@@ -99,22 +99,31 @@ function digimonLocalStorage() {
         const dataFavoritos = localStorage.getItem("Lista Digimon")
         return JSON.parse(dataFavoritos)
 }
-    
-function carregarFavDigimons(digimonMain){
-    if(localStorage.getItem("Lista Digimon")){
-        const favoritesTable = document.querySelector('#favoritos tbody');
-        const digimonsFavoritados = digimonLocalStorage();
-    
-        digimonMain.forEach(digimonsFavoritados => {
-            const tr = document.createElement('tr')
-            tr.innerHTML = `
-                <td>
-                    <img src"${digimonsFavoritados.img} alt ="Imagem do Digimon ${digimonsFavoritados.name}"
-                </td>
-                <td>${digimonsFavoritados.name}</td>
-                <td>${digimonsFavoritados.level}</td>
-            `;
-            favoritesTable.appendChild(tr);
-        })
-    }
+
+
+
+function carregarDigiFavoritados(personagens) {
+    digimonMain.innerHTML = "";
+    personagens.map((digimon) => {
+        const digimonsCards = document.createElement("figure");
+        digimonsCards.classList.add(".description");
+        digimonsCards.innerHTML = `
+        <div class="description ${digimon.level}">
+            <img class="img-description" src="${digimon.img}" width="180" alt="Imagem do Digimon ${digimon.name}">
+            <figcaption class="name-character">${digimon.name}</figcaption>
+            <span class="span-dgm ${digimon.level}">Level: ${digimon.level}</span>
+            <button type="button" class="favorite-btn" onclick='favDigimon(${JSON.stringify(digimon)})'>
+            +
+            </button>    
+        </div>
+`;
+    digimonMain.appendChild(digimonsCards);
+  });
 }
+function reloadFav() { 
+    const digimonsFavoritados = digimonLocalStorage();
+    carregarDigiFavoritados(digimonsFavoritados)
+}
+
+let btnFav = document.querySelector('#btnFav')
+btnFav.addEventListener("click", reloadFav)
