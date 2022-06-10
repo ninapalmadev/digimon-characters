@@ -100,29 +100,9 @@ function digimonLocalStorage() {
         return JSON.parse(dataFavoritos)
 }
 
-
-
-function carregarDigiFavoritados(personagens) {
-    digimonMain.innerHTML = "";
-    personagens.map((digimon) => {
-        const digimonsCards = document.createElement("figure");
-        digimonsCards.classList.add(".description");
-        digimonsCards.innerHTML = `
-        <div class="description ${digimon.level}">
-            <img class="img-description" src="${digimon.img}" width="180" alt="Imagem do Digimon ${digimon.name}">
-            <figcaption class="name-character">${digimon.name}</figcaption>
-            <span class="span-dgm ${digimon.level}">Level: ${digimon.level}</span>
-            <button type="button" class="favorite-btn" onclick='favDigimon(${JSON.stringify(digimon)})'>
-            +
-            </button>    
-        </div>
-`;
-    digimonMain.appendChild(digimonsCards);
-  });
-}
 function reloadFav() { 
     const digimonsFavoritados = digimonLocalStorage();
-    carregarDigiFavoritados(digimonsFavoritados)
+    createDigimonCards(digimonsFavoritados)
 }
 
 let btnFav = document.querySelector('#btnFav')
