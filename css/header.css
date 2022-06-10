@@ -6,13 +6,11 @@
     padding: 20px 0;
     margin: auto;
 }
-
 .main_nav {
     display: flex;
     align-items: center;
 }
-.favoritados {
-    position: relative;
+#btnFav {
     background-color: black;
     font-family: var(--fonte-destaque);
     color: var(--cor-branco);
@@ -32,7 +30,7 @@
     padding: 20px;
 }
 
-.main_nav > a:hover , .favoritados:hover{
+.main_nav > a:hover , #btnFav:hover{
     border: 1px solid var(--cor-verde2);
 }
 
